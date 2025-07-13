@@ -7,7 +7,7 @@ import { subscribeToNewsletter } from "@/lib/api";
 
 export function NewsletterForm() {
   const [email, setEmail] = useState("");
-  const [name,setName] = useState('')
+//   const [name,setName] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -37,9 +37,10 @@ const handleSubmit = async (e: React.FormEvent) => {
       } else {
         alert(res.message || "Subscription failed");
       }
-    } catch (err: any) {
-      console.error(err);
-      alert(err?.response?.data?.message || "Server error");
+    } catch (err: unknown) {
+        if (err instanceof Error) {
+            console.error(err.message);
+          }
     } finally {
       setIsLoading(false);
     }
@@ -64,7 +65,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           </svg>
         </div>
         <p className="text-white font-medium">
-          You're in! We'll notify you when the first collection drops.
+        You&apos;re in! We&apos;ll notify you when the first collection drops.
         </p>
       </div>
     );
