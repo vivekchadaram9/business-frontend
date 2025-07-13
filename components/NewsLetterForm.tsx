@@ -80,12 +80,12 @@ const handleSubmit = async (e: React.FormEvent) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="flex-1 bg-black/30 border-white/20 text-white placeholder:text-white/70 focus:border-cinematic-gold focus:ring-cinematic-gold/50 h-12 px-4"
+          className="flex-1 bg-black/30 border-white/20 text-white placeholder:text-white/70 focus:border-cinematic-gold focus:ring-cinematic-gold/50 h-12 px-4 py-3 text-sm"
         />
         <Button
           type="submit"
           disabled={isLoading}
-          className=" text-black font-semibold px-8 h-12 whitespace-nowrap bg-amber-300 hover:bg-amber-200/90"
+          className=" text-black font-semibold px-8 lg:h-12 whitespace-nowrap bg-amber-300 hover:bg-amber-200/90 "
         >
           {isLoading ? (
             <div className="flex items-center gap-2">
